@@ -54,9 +54,7 @@ source ~/.vim/plugins.vim
 " Color and Theme
 " --------------
 set background=dark           " Use dark background
-" Catppuccin theme settings
-let g:catppuccin_flavour = "frappe" " latte, frappe, macchiato, mocha
-colorscheme catppuccin
+colorscheme catppuccin_latte  " Set color scheme
 
 " Key Mappings
 " -----------

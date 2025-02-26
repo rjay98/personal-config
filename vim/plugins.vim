@@ -44,13 +44,14 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 " Open NERDTree automatically when vim starts up on opening a directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | execute 'NERDTree' argv()[0] | wincmd p | enew | endif
+" Open NERDTree automatically when vim starts without a file
+autocmd VimEnter * if argc() == 0 | NERDTree | endif
 
-" Gruvbox theme settings
-let g:gruvbox_contrast_dark = 'medium'
-let g:gruvbox_italic = 1
+" Catppuccin theme settings
+let g:catppuccin_flavour = 'latte' " latte, frappe, macchiato, mocha
 
-" Airline settings
+" Airline settings - use a compatible theme
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'catppuccin'
+let g:airline_theme = 'base16' " or try 'minimalist', 'tomorrow', or 'deus'
 
 " Add your plugin settings here...
