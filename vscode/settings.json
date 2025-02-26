@@ -1,0 +1,140 @@
+{
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "autoimport.autoComplete": false,
+  "autoimport.useSemiColon": false,
+  "breadcrumbs.symbolPath": "last",
+  "debug.console.fontFamily": "'JetBrains Mono Nerd Font', MonoLisa, Menlo, Monaco, 'Courier New', monospace",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.maxComputationTime": 0,
+  "editor.accessibilitySupport": "off",
+  "editor.autoClosingBrackets": "languageDefined",
+  "editor.autoIndent": "advanced",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "editor.codeLensFontFamily": "editor",
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.experimentalEditContextEnabled": true,
+  "editor.fontFamily": "'JetBrains Mono Nerd Font', MonoLisa, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.fontVariations": false,
+  "editor.fontWeight": "normal",
+  "editor.guides.bracketPairs": "active",
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "editor.linkedEditing": true,
+  "editor.minimap.autohide": true,
+  "editor.minimap.renderCharacters": true,
+  "editor.minimap.scale": 3,
+  "editor.pasteAs.preferences": ["text.updateImports"],
+  "editor.smoothScrolling": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.trimAutoWhitespace": true,
+  "editor.wordWrap": "on",
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.associations": {
+    "*.tsx": "typescriptreact",
+    "*.css": "tailwindcss",
+    "*.tf": "terraform"
+  },
+  "files.exclude": {
+    "**/node_modules/**": true
+  },
+  "files.watcherExclude": {
+    "**/node_modules/**": true
+  },
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": true
+  },
+  "githubPullRequests.createOnPublishBranch": "never",
+  "githubPullRequests.pullBranch": "never",
+  "githubPullRequests.terminalLinksHandler": "github",
+  "gitlens.mode.active": "zen",
+  "gitlens.showWelcomeOnInstall": false,
+  "gitlens.showWhatsNewAfterUpgrades": false,
+  "go.toolsManagement.autoUpdate": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "markdown.preview.fontFamily": "",
+  "merge-conflict.autoNavigateNextConflict.enabled": true,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "pgsql.resultsFontFamily": "",
+  "prettier.singleQuote": true,
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingImports": "none",
+    "reportMissingModuleSource": "none"
+  },
+  "redhat.telemetry.enabled": false,
+  "scm.inputFontFamily": "'JetBrains Mono Nerd Font', MonoLisa, Menlo, Monaco, 'Courier New', monospace",
+  "search.exclude": {
+    "**/node_modules/**": true
+  },
+  "search.useGlobalIgnoreFiles": true,
+  "security.workspace.trust.untrustedFiles": "newWindow",
+  "telemetry.telemetryLevel": "error",
+  "terminal.explorerKind": "external",
+  "terminal.integrated.altClickMovesCursor": false,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.fontFamily": "'JetBrains Mono Nerd Font', 'Menlo', 'Monaco', 'Courier New', monospace",
+  "typescript.experimental.expandableHover": true,
+  "typescript.preferences.includePackageJsonAutoImports": "on",
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "window.restoreWindows": "one",
+  "workbench.colorTheme": "Catppuccin Frappé",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "workbench.fontAliasing": "auto",
+  "workbench.iconTheme": "vscode-great-icons",
+  "workbench.list.smoothScrolling": true,
+  "workbench.localHistory.exclude": {
+    "**/cache/**": true,
+    "**/node_modules/**": true,
+    "**/transpiled/**": true
+  },
+  "workbench.sideBar.location": "right",
+  "xml.server.vmargs": "-Xmx128M",
+  "zenMode.fullScreen": false,
+}
+
