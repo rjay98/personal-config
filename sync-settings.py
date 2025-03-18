@@ -4,7 +4,8 @@ Sync Settings Script
 
 This script synchronizes configuration files for vim, zsh, and vscode
 from a GitHub repository to their appropriate locations on a Mac.
-It preserves work-specific configurations in .zshrc.
+It preserves work-specific configurations in .zshrc and installs
+Homebrew packages from a list.
 """
 
 import datetime
@@ -277,6 +278,69 @@ def sync_vscode_settings():
         print("❌ extensions.txt not found")
 
 
+def install_homebrew_packages():
+    """Install Homebrew packages from the homebrews.txt file."""
+    print_header("Installing Homebrew Packages")
+    
+    brew_packages_file = os.path.join(REPO_ROOT, 'brew', 'homebrews.txt')
+    
+    if not os.path.exists(brew_packages_file):
+        print(f"❌ Homebrew packages file not found at {brew_packages_file}")
+        return
+    
+    # Check if Homebrew is installed
+    try:
+        subprocess.run(['which', 'brew'], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    except subprocess.CalledProcessError:
+        print("❌ Homebrew is not installed. Please install Homebrew first.")
+        print("💡 Install Homebrew with: /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"")
+        return
+    
+    # Read packages from file
+    with open(brew_packages_file, 'r') as f:
+        packages = [line.strip() for line in f if line.strip() and not line.startswith('#')]
+    
+    if not packages:
+        print("ℹ️ No packages found in homebrews.txt")
+        return
+    
+    print(f"📋 Found {len(packages)} packages to install")
+    
+    # Install each package
+    for package in packages:
+        print(f"⏳ Installing {package}...")
+        try:
+            # Using brew install with --force-bottle to prefer pre-built binaries
+            result = subprocess.run(
+                ['brew', 'install', package],
+                check=False,  # Don't fail if already installed
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True
+            )
+            
+            if result.returncode == 0:
+                print(f"✅ Installed {package}")
+            else:
+                # Check if it's already installed
+                check_result = subprocess.run(
+                    ['brew', 'list', package],
+                    check=False,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE
+                )
+                
+                if check_result.returncode == 0:
+                    print(f"ℹ️ Package {package} is already installed")
+                else:
+                    print(f"❌ Failed to install {package}: {result.stderr.strip()}")
+        
+        except Exception as e:
+            print(f"❌ Error installing {package}: {e}")
+    
+    print("✅ Homebrew package installation complete")
+
+
 def main():
     """Main function that runs the sync process."""
     print_header("Starting Settings Sync")
@@ -288,6 +352,9 @@ def main():
         sync_vim_settings()
         sync_zsh_settings()
         sync_vscode_settings()
+        
+        # Install Homebrew packages
+        install_homebrew_packages()
         
         print_header("Settings Sync Complete!")
         print("All your configuration files have been synced successfully!")

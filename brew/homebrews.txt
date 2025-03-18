@@ -1,0 +1,14 @@
+derailed/k9s/k9s
+fzf
+garden-io/garden/garden-cli
+gh
+ghostscript
+git-delta
+graphicsmagick
+hashicorp/tap/terraform
+postgresql@14
+swiftformat
+tctl
+temporal
+withgraphite/tap/graphite
+zsh-autosuggestions
